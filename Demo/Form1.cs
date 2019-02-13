@@ -16,5 +16,10 @@ namespace Demo
         {
             InitializeComponent();
         }
+        // Кнопка для обработки события нажатия
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Utils.OneItem();
+        }
     }
 }
