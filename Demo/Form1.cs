@@ -4,6 +4,10 @@ using System.Linq;
 using System.Windows.Forms;
 using NLua;
 
+//TODO List:
+//TODO: GenMods Parser
+//TODO: Link Generation to Query
+
 namespace Demo
 {
     public partial class Form1 : Form
