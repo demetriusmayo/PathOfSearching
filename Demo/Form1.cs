@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Leaf.xNet;
 using NLua;
 using Leaf.xNet.Services.Cloudflare;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 
 //TODO List:
@@ -69,7 +67,7 @@ namespace Demo
         {
             var httpRequest = new HttpRequest();
             var clearResp = httpRequest.GetThroughCloudflare("https://www.pathofexile.com/api/trade/data/stats");
-            dynamic x = Newtonsoft.Json.JsonConvert.DeserializeObject(clearResp.ToString());
+            dynamic x = JsonConvert.DeserializeObject(clearResp.ToString());
             var result = x.result;
             var collectList = new List<Results>();
 
