@@ -17,46 +17,33 @@ namespace Demo
         {
             InitializeComponent();
         }
-
-        public static string[] RemoveDuplicates(string[] s)
-        {
-            HashSet<string> set = new HashSet<string>(s);
-            string[] result = new string[set.Count];
-            set.CopyTo(result);
-            return result;
-        }
-
-        // Кнопка для обработки события нажатия
+        // make item data to Item Mods
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 50; i++)
+            for (var i = 0; i < 20; i++)
             {
-                Lua state = new Lua();
-                var success = true;
+                var state = new Lua();
                 try
                 {
                     state.DoFile(@"C:\Users\WORK\Desktop\POE_Tools\MakeGearGreat\Demo\Demo\ModParser.lua");
                 }
                 catch (NLua.Exceptions.LuaScriptException ex)
                 {
-                    success = false;
                     Console.WriteLine(e.ToString());
                 }
 
                 var scriptFunc = state["parseMod"] as LuaFunction;
                 var res = scriptFunc.Call(richTextBox3.Text);
-                var _s = "";
-//            var toCycle = new []{ s };
+                var findmodsText = "";
 
                 foreach (KeyValuePair<object, object> variable in (LuaTable) res[0])
                 {
-                    //Array.Resize(ref toCycle, toCycle.Length + 1);
-                    //toCycle[toCycle.Length - 1] = variable.Value.ToString();
-                    _s += variable.Value + "\r\n";
+                    findmodsText += variable.Value + "\r\n";
                 }
 
-                label5.Text = _s;
-                findmods.Text += _s;
+                label5.Text = findmodsText;
+                findmods.Text += findmodsText;
+                // remove duplicates
                 findmods.Text = string.Join("\r\n", findmods.Lines.Distinct());
             }
         }
