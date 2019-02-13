@@ -28,25 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            Form1.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(9, 19);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(313, 233);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // label1
             // 
@@ -79,8 +72,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(Form1.label4);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -89,6 +83,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "One item search";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 289);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "bestVal:";
             // 
             // tabPage2
             // 
@@ -110,6 +113,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ukrainian Boys (c) 2019";
             // 
+            // label4
+            // 
+            Form1.label4.AutoSize = true;
+            Form1.label4.Location = new System.Drawing.Point(60, 289);
+            Form1.label4.Name = "label4";
+            Form1.label4.Size = new System.Drawing.Size(35, 13);
+            Form1.label4.TabIndex = 4;
+            Form1.label4.Text = "(paste item)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,13 +141,17 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        public static System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
+        public static System.Windows.Forms.Label bestVal;
+        private System.Windows.Forms.Label label3;
+        public static System.Windows.Forms.RichTextBox richTextBox2;
+        public static System.Windows.Forms.Label label4;
     }
 }
 

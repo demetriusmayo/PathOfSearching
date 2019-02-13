@@ -12,11 +12,8 @@ namespace Demo
     {
         internal static void OneItem()
         {
-            var state = new Lua ();
-            state.DoString("y = 10 + x*(5 + 2)");
-            var y = state["y"];
+            ModParser._init();
             return;
         }
-
     }
 }
