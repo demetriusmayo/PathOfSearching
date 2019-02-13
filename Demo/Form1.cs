@@ -8,8 +8,7 @@ using Leaf.xNet.Services.Cloudflare;
 using Newtonsoft.Json;
 
 
-//TODO List:
-//TODO: GenMods Parser
+//GenMods Parser+
 //TODO: Link Generation to Query
 
 namespace Demo
@@ -70,20 +69,23 @@ namespace Demo
             dynamic x = JsonConvert.DeserializeObject(clearResp.ToString());
             var result = x.result;
             var collectList = new List<Results>();
+            collectList.Clear();
+            collectedCount.Text = "0";
 
             foreach (var labels in result)
             {
                 var labelName = labels.label;
 
+
                 if (labelName == "Explicit" || labelName == "Implicit" || labelName == "Crafted")
                 {
                     foreach (var xEntry in labels.entries)
                     {
-                        collectList.Add(new Results() { Id = xEntry.id, Text = xEntry.text });
+                        collectList.Add(new Results {Id = xEntry.id, Text = xEntry.text});
                     }
                 }
 
-                collectedCount.Text = collectList.Count().ToString();
+                collectedCount.Text = collectList.Count.ToString();
             }
         }
     }

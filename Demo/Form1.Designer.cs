@@ -63,12 +63,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(9, 259);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Convert";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
@@ -187,18 +189,20 @@
             // 
             // updateDataStats
             // 
+            this.updateDataStats.BackColor = System.Drawing.Color.Black;
+            this.updateDataStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.updateDataStats.Location = new System.Drawing.Point(7, 10);
             this.updateDataStats.Name = "updateDataStats";
-            this.updateDataStats.Size = new System.Drawing.Size(75, 23);
+            this.updateDataStats.Size = new System.Drawing.Size(174, 23);
             this.updateDataStats.TabIndex = 0;
-            this.updateDataStats.Text = "Update Data Stats";
-            this.updateDataStats.UseVisualStyleBackColor = true;
+            this.updateDataStats.Text = "Update all mods";
+            this.updateDataStats.UseVisualStyleBackColor = false;
             this.updateDataStats.Click += new System.EventHandler(this.updateDataStats_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(88, 15);
+            this.label7.Location = new System.Drawing.Point(187, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(367, 13);
             this.label7.TabIndex = 1;
