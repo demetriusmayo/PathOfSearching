@@ -610,12 +610,15 @@ local modNameList = {
     ["charge recovery"] = "FlaskChargeRecovery",
 }
 
+-- Scan a line for the earliest and longest match from the pattern list
+-- If a match is found, returns the corresponding value from the pattern list, plus the remainder of the line and a table of captures
+
 local function scan(line, patternList, plain)
     local bestIndex, bestEndIndex
     local bestPattern = ""
+    local makeQuery = {}
     local bestVal, bestStart, bestEnd, bestCaps
     local lineLower = line:lower()
-    local makeQuery = {}
     for pattern, patternVal in pairs(patternList) do
         local index, endIndex, cap1, cap2, cap3, cap4, cap5 = lineLower:find(pattern, 1, plain)
         if index and (not bestIndex or index < bestIndex or (index == bestIndex and (endIndex > bestEndIndex or (endIndex == bestEndIndex and #pattern > #bestPattern)))) then
@@ -629,10 +632,11 @@ local function scan(line, patternList, plain)
             bestCaps = { cap1, cap2, cap3, cap4, cap5 }
         end
     end
-    if bestPattern then
-        return makeQuery, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
+    if makeQuery then
+        return makeQuery
+        --, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
     else
-        return "nothing", line
+        return "null"
     end
 end
 
@@ -661,6 +665,7 @@ function scanToLink(line, patternList, plain)
 end
 
 function parseMod(line)
+    --line = scan(line, modNameList, true)
     line = scan(line, modNameList, true)
     --end scanning
     return line

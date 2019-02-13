@@ -11,6 +11,7 @@ namespace Demo
         // Реализация логики работы парсера модов вещей
         public static void _init()
         {
+            var tempo = "";
             Lua state = new Lua();
             var success = true;
             try
