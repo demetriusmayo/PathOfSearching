@@ -130,7 +130,42 @@
             Form1.richTextBox3.Name = "richTextBox3";
             Form1.richTextBox3.Size = new System.Drawing.Size(392, 233);
             Form1.richTextBox3.TabIndex = 5;
-            Form1.richTextBox3.Text = "";
+            Form1.richTextBox3.Text = @"Rarity: Unique
+Queen of the Forest
+Destiny Leather
+--------
+Evasion Rating: 2037 (augmented)
+--------
+Requirements:
+Level: 59
+Dex: 160
+--------
+Sockets: G G 
+--------
+Item Level: 76
+--------
+5% increased maximum Energy Shield
+--------
+239% increased Evasion Rating
++60 to maximum Life
++10% to Fire Resistance
++31% to Cold Resistance
++15% to Lightning Resistance
+25% reduced Movement Speed
+1% increased Movement Speed per 600 Evasion Rating, up to 75%
+-50 Physical Damage taken when Hit by Animals
+--------
+Shedding away her regal past, 
+she forged a new destiny. 
+Sacrificing the ephemeral joys of man, 
+she embraced the eternal grasp of nature. 
+Seizing her one true wish, 
+she found peace at last.
+--------
+Corrupted
+--------
+Note: ~price 10 chaos
+";
             //
             // Form1
             //

@@ -665,7 +665,7 @@ function parseMod(line)
     --end scanning
     return line
 end
---
+-- debug
 --if not package.loaded['modulename'] then
 --    parseMod("hi")
 --end

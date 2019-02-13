@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c347c12-5359-40e8-b777-86fc904b8f5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ModParser.lua" beforeDir="false" afterPath="$PROJECT_DIR$/ModParser.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ModParser.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="663" column="17" lean-forward="true" selection-start-line="663" selection-start-column="17" selection-end-line="663" selection-end-column="17" />
+            <state relative-caret-position="204">
+              <caret line="622" column="44" selection-start-line="622" selection-start-column="12" selection-end-line="622" selection-end-column="44" />
               <folding>
                 <element signature="e#5690#6584#1" />
                 <element signature="e#12426#15025#1" />
@@ -37,6 +36,7 @@
       <find>to call</find>
       <find>attempt to call</find>
       <find>176</find>
+      <find>resis</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,12 +143,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550072598226</updated>
       <workItem from="1550072599525" duration="5691000" />
-      <workItem from="1550078420283" duration="4981000" />
+      <workItem from="1550078420283" duration="5338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10672000" />
+    <option name="totallyTimeSpent" value="11029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -182,22 +182,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/ModParser.lua</url>
-          <line>665</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ModParser.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="663" column="17" lean-forward="true" selection-start-line="663" selection-start-column="17" selection-end-line="663" selection-end-column="17" />
+        <state relative-caret-position="204">
+          <caret line="622" column="44" selection-start-line="622" selection-start-column="12" selection-end-line="622" selection-end-column="44" />
           <folding>
             <element signature="e#5690#6584#1" />
             <element signature="e#12426#15025#1" />
