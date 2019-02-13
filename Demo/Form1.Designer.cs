@@ -33,13 +33,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.findmods = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            this.findmods = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.clearmods = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -89,24 +90,6 @@
             this.tabPage1.Text = "One item search";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // findmods
-            // 
-            this.findmods.Location = new System.Drawing.Point(576, 12);
-            this.findmods.MaxLength = 100000;
-            this.findmods.Multiline = true;
-            this.findmods.Name = "findmods";
-            this.findmods.Size = new System.Drawing.Size(253, 743);
-            this.findmods.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(665, 758);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Find Mods";
-            // 
             // richTextBox3
             // 
             this.richTextBox3.Location = new System.Drawing.Point(9, 20);
@@ -139,7 +122,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(687, 468);
+            this.tabPage2.Size = new System.Drawing.Size(554, 717);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "About tool";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -153,11 +136,40 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ukrainian Boys (c) 2019";
             // 
+            // findmods
+            // 
+            this.findmods.Location = new System.Drawing.Point(576, 32);
+            this.findmods.MaxLength = 100000;
+            this.findmods.Multiline = true;
+            this.findmods.Name = "findmods";
+            this.findmods.Size = new System.Drawing.Size(253, 723);
+            this.findmods.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(665, 758);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Find Mods";
+            // 
+            // clearmods
+            // 
+            this.clearmods.Location = new System.Drawing.Point(668, 3);
+            this.clearmods.Name = "clearmods";
+            this.clearmods.Size = new System.Drawing.Size(75, 23);
+            this.clearmods.TabIndex = 8;
+            this.clearmods.Text = "clear";
+            this.clearmods.UseVisualStyleBackColor = true;
+            this.clearmods.Click += new System.EventHandler(this.clearmods_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 780);
+            this.Controls.Add(this.clearmods);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.findmods);
             this.Controls.Add(this.tabControl1);
@@ -190,6 +202,7 @@
         public System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox findmods;
+        private System.Windows.Forms.Button clearmods;
     }
 }
 

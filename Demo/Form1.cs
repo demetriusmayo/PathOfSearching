@@ -15,7 +15,7 @@ namespace Demo
         // make item data to Item Mods
         private void button1_Click(object sender, EventArgs e)
         {
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 50; i++)
             {
                 var state = new Lua();
                 try
@@ -41,6 +41,11 @@ namespace Demo
                 // remove duplicates
                 findmods.Text = string.Join("\r\n", findmods.Lines.Distinct());
             }
+        }
+
+        private void clearmods_Click(object sender, EventArgs e)
+        {
+            findmods.Clear();
         }
     }
 }
