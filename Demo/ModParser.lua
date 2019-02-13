@@ -632,8 +632,8 @@ local function scan(line, patternList, plain)
             bestCaps = { cap1, cap2, cap3, cap4, cap5 }
         end
     end
-    if bestVal then
-        return bestVal, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
+    if bestPattern then
+        return bestPattern, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
     else
         return "nothing", line
     end

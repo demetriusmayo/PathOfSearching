@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NLua;
 
 namespace Demo
@@ -13,7 +9,7 @@ namespace Demo
         public static void _init()
         {
             Lua state = new Lua();
-            bool success = true;
+            var success = true;
             try
             {
 	            state.DoFile(@"C:\Users\WORK\Desktop\POE_Tools\MakeGearGreat\Demo\Demo\ModParser.lua");
@@ -24,8 +20,8 @@ namespace Demo
 	            Console.WriteLine(e.ToString());
             }
             var scriptFunc = state ["parseMod"] as LuaFunction;
-            var res = scriptFunc.Call (Form1.richTextBox2.Text);
-            Form1.label4.Text = res.ToString();
+            var res = scriptFunc.Call (Form1.richTextBox3.Text);
+            Form1.label5.Text = res[0].ToString();
         }
     }
 }
