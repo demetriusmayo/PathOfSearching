@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ModParser.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="620" column="32" selection-start-line="620" selection-start-column="27" selection-end-line="620" selection-end-column="32" />
+            <state relative-caret-position="159">
+              <caret line="311" column="36" selection-start-line="311" selection-start-column="6" selection-end-line="311" selection-end-column="36" />
               <folding>
                 <element signature="e#5690#6584#1" />
                 <element signature="e#12426#15025#1" />
@@ -141,12 +141,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550072598226</updated>
       <workItem from="1550072599525" duration="5691000" />
-      <workItem from="1550078420283" duration="9175000" />
+      <workItem from="1550078420283" duration="9778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14866000" />
+    <option name="totallyTimeSpent" value="15469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -183,8 +183,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ModParser.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="620" column="32" selection-start-line="620" selection-start-column="27" selection-end-line="620" selection-end-column="32" />
+        <state relative-caret-position="159">
+          <caret line="311" column="36" selection-start-line="311" selection-start-column="6" selection-end-line="311" selection-end-column="36" />
           <folding>
             <element signature="e#5690#6584#1" />
             <element signature="e#12426#15025#1" />

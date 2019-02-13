@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Leaf.xNet;
 using NLua;
+using Leaf.xNet.Services.Cloudflare;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 
 //TODO List:
 //TODO: GenMods Parser
@@ -16,6 +22,7 @@ namespace Demo
         {
             InitializeComponent();
         }
+
         // make item data to Item Mods
         private void button1_Click(object sender, EventArgs e)
         {
@@ -50,6 +57,36 @@ namespace Demo
         private void clearmods_Click(object sender, EventArgs e)
         {
             findmods.Clear();
+        }
+
+        class Results
+        {
+            public string Id { get; set; }
+            public string Text { get; set; }
+        }
+
+        private void updateDataStats_Click(object sender, EventArgs e)
+        {
+            var httpRequest = new HttpRequest();
+            var clearResp = httpRequest.GetThroughCloudflare("https://www.pathofexile.com/api/trade/data/stats");
+            dynamic x = Newtonsoft.Json.JsonConvert.DeserializeObject(clearResp.ToString());
+            var result = x.result;
+            var collectList = new List<Results>();
+
+            foreach (var labels in result)
+            {
+                var labelName = labels.label;
+
+                if (labelName == "Explicit" || labelName == "Implicit" || labelName == "Crafted")
+                {
+                    foreach (var xEntry in labels.entries)
+                    {
+                        collectList.Add(new Results() { Id = xEntry.id, Text = xEntry.text });
+                    }
+                }
+
+                collectedCount.Text = collectList.Count().ToString();
+            }
         }
     }
 }
