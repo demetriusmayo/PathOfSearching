@@ -1,9 +1,3 @@
--- Path of Building
---
--- Module: Global
--- Global constants
---
-
 colorCodes = {
     NORMAL = "^xC8C8C8",
     MAGIC = "^x8888FF",
@@ -615,7 +609,34 @@ local modNameList = {
     ["flask charges gained"] = "FlaskChargesGained",
     ["charge recovery"] = "FlaskChargeRecovery",
 }
+
 local function scan(line, patternList, plain)
+    local bestIndex, bestEndIndex
+    local bestPattern = ""
+    local bestVal, bestStart, bestEnd, bestCaps
+    local lineLower = line:lower()
+    local makeQuery = {}
+    for pattern, patternVal in pairs(patternList) do
+        local index, endIndex, cap1, cap2, cap3, cap4, cap5 = lineLower:find(pattern, 1, plain)
+        if index and (not bestIndex or index < bestIndex or (index == bestIndex and (endIndex > bestEndIndex or (endIndex == bestEndIndex and #pattern > #bestPattern)))) then
+            bestIndex = index
+            table.insert(makeQuery, pattern)
+            bestEndIndex = endIndex
+            bestPattern = pattern
+            bestVal = patternVal
+            bestStart = index
+            bestEnd = endIndex
+            bestCaps = { cap1, cap2, cap3, cap4, cap5 }
+        end
+    end
+    if bestPattern then
+        return makeQuery, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
+    else
+        return "nothing", line
+    end
+end
+
+function scanToLink(line, patternList, plain)
     local bestIndex, bestEndIndex
     local bestPattern = ""
     local bestVal, bestStart, bestEnd, bestCaps
@@ -632,10 +653,10 @@ local function scan(line, patternList, plain)
             bestCaps = { cap1, cap2, cap3, cap4, cap5 }
         end
     end
-    if bestPattern then
-        return bestPattern, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
+    if bestVal then
+        return bestVal, line:sub(1, bestStart - 1) .. line:sub(bestEnd + 1, -1), bestCaps
     else
-        return "nothing", line
+        return nil, line
     end
 end
 
@@ -644,3 +665,7 @@ function parseMod(line)
     --end scanning
     return line
 end
+--
+--if not package.loaded['modulename'] then
+--    parseMod("hi")
+--end

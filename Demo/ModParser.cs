@@ -21,7 +21,7 @@ namespace Demo
             }
             var scriptFunc = state ["parseMod"] as LuaFunction;
             var res = scriptFunc.Call (Form1.richTextBox3.Text);
-            Form1.label5.Text = res[0].ToString();
+//            Form1.label5.Text = res[0].ToString();
         }
     }
 }
