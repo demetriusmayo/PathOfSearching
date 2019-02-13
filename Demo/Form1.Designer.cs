@@ -28,31 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.findmods = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
-            Form1.label5 = new System.Windows.Forms.Label();
-            Form1.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Paste Copy ItemInfo";
-            //
+            // 
             // button1
-            //
+            // 
             this.button1.Location = new System.Drawing.Point(9, 259);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -60,43 +63,78 @@
             this.button1.Text = "Convert";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
+            // 
             // tabControl1
-            //
+            // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(695, 494);
+            this.tabControl1.Size = new System.Drawing.Size(562, 743);
             this.tabControl1.TabIndex = 3;
-            //
+            // 
             // tabPage1
-            //
-            this.tabPage1.Controls.Add(Form1.richTextBox3);
-            this.tabPage1.Controls.Add(Form1.label5);
+            // 
+            this.tabPage1.Controls.Add(this.richTextBox3);
+            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(687, 468);
+            this.tabPage1.Size = new System.Drawing.Size(554, 717);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "One item search";
             this.tabPage1.UseVisualStyleBackColor = true;
-            //
+            // 
+            // findmods
+            // 
+            this.findmods.Location = new System.Drawing.Point(576, 12);
+            this.findmods.MaxLength = 100000;
+            this.findmods.Multiline = true;
+            this.findmods.Name = "findmods";
+            this.findmods.Size = new System.Drawing.Size(253, 743);
+            this.findmods.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(665, 758);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Find Mods";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(9, 20);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(672, 233);
+            this.richTextBox3.TabIndex = 5;
+            this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(61, 288);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(22, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "(.?)";
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 289);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "bestVal:";
-            //
+            this.label3.Text = "mods";
+            // 
             // tabPage2
-            //
+            // 
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -105,73 +143,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "About tool";
             this.tabPage2.UseVisualStyleBackColor = true;
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(286, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ukrainian Boys (c) 2019";
-            //
-            // label5
-            //
-            Form1.label5.AutoSize = true;
-            Form1.label5.Location = new System.Drawing.Point(61, 288);
-            Form1.label5.Name = "label5";
-            Form1.label5.Size = new System.Drawing.Size(35, 13);
-            Form1.label5.TabIndex = 4;
-            Form1.label5.Text = "(.?)";
-            //
-            // richTextBox3
-            //
-            Form1.richTextBox3.Location = new System.Drawing.Point(9, 20);
-            Form1.richTextBox3.Name = "richTextBox3";
-            Form1.richTextBox3.Size = new System.Drawing.Size(392, 233);
-            Form1.richTextBox3.TabIndex = 5;
-            Form1.richTextBox3.Text = @"Rarity: Unique
-Queen of the Forest
-Destiny Leather
---------
-Evasion Rating: 2037 (augmented)
---------
-Requirements:
-Level: 59
-Dex: 160
---------
-Sockets: G G 
---------
-Item Level: 76
---------
-5% increased maximum Energy Shield
---------
-239% increased Evasion Rating
-+60 to maximum Life
-+10% to Fire Resistance
-+31% to Cold Resistance
-+15% to Lightning Resistance
-25% reduced Movement Speed
-1% increased Movement Speed per 600 Evasion Rating, up to 75%
--50 Physical Damage taken when Hit by Animals
---------
-Shedding away her regal past, 
-she forged a new destiny. 
-Sacrificing the ephemeral joys of man, 
-she embraced the eternal grasp of nature. 
-Seizing her one true wish, 
-she found peace at last.
---------
-Corrupted
---------
-Note: ~price 10 chaos
-";
-            //
+            // 
             // Form1
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 511);
+            this.ClientSize = new System.Drawing.Size(925, 780);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.findmods);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Import item data ALIVE";
@@ -181,6 +169,7 @@ Note: ~price 10 chaos
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,8 +186,10 @@ Note: ~price 10 chaos
         private System.Windows.Forms.Label label3;
         public static System.Windows.Forms.RichTextBox richTextBox2;
         public static System.Windows.Forms.Label label4;
-        public static System.Windows.Forms.Label label5;
-        public static System.Windows.Forms.RichTextBox richTextBox3;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox findmods;
     }
 }
 
