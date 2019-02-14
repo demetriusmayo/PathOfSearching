@@ -44,7 +44,7 @@ namespace PathOfSearching
                 var state = new Lua();
                 try
                 {
-                    state.DoFile(@"C:\Users\WORK\Desktop\POE_Tools\MakeGearGreat\Demo\Demo\ModParser.lua");
+                    state.DoFile(@"C:\Users\WORK\Desktop\POE_Tools\MakeGearGreat\PathOfSearching\PathOfSearching\ModParser.lua");
                 }
                 catch (NLua.Exceptions.LuaScriptException ex)
                 {
