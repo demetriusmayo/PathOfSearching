@@ -542,6 +542,7 @@ function M.bit.bswap(x)
   return bit_tobit(bswap(x % MOD))
 end
 
+
 ----------------------------------------------------------------------------------
 -- Path of Building
 --
@@ -557,8 +558,8 @@ local t_sort = table.sort
 local m_floor = math.floor
 local m_abs = math.abs
 local s_format = string.format
-local band = bit_band
-local bor = bit_bor
+local band = bit32_band
+local bor = bit32_bor
 
 modLib = { }
 
@@ -707,6 +708,7 @@ end
 function modLib.formatMod(mod)
 	return modLib.formatValue(mod.value) .. " = " .. modLib.formatModParams(mod)
 end
+
 ----------------------------------------------------------------------------------
 colorCodes = {
     NORMAL = "^xC8C8C8",
