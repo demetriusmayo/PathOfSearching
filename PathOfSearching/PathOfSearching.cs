@@ -16,19 +16,19 @@ using Newtonsoft.Json.Linq;
 //GenMods Parser+
 //TODO: Link Generation to Query
 
-namespace Demo
+namespace PathOfSearching
 {
-    public partial class Form1 : Form
+    public partial class PathOfSearching : Form
     {
         public static List<Results> CollectList;
         public static string findModsGlobal;
 
-        public Form1()
+        public PathOfSearching()
         {
             InitializeComponent();
         }
 
-        static Form1()
+        static PathOfSearching()
         {
             CollectList = new List<Results>();
         }

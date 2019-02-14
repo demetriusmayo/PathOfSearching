@@ -1,6 +1,6 @@
-﻿namespace Demo
+﻿namespace PathOfSearching
 {
-    partial class Form1
+    partial class PathOfSearching
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PathOfSearching));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -262,7 +262,7 @@
             this.clearmods.UseVisualStyleBackColor = true;
             this.clearmods.Click += new System.EventHandler(this.clearmods_Click);
             // 
-            // Form1
+            // PathOfSearching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +272,7 @@
             this.Controls.Add(this.findmods);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "PathOfSearching";
             this.Text = "Path of Searching";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
