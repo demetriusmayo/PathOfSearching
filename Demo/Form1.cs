@@ -134,7 +134,13 @@ namespace Demo
 
             MessageBox.Show("Done!");
         }
-
+        public static string[] RemoveDuplicates(string[] s)
+        {
+            HashSet<string> set = new HashSet<string>(s);
+            string[] result = new string[set.Count];
+            set.CopyTo(result);
+            return result;
+        }
         private void searchMods_Click(object sender, EventArgs e)
         {
             List<string> result = findModsGlobal.Split(new char[] {','}).ToList();
@@ -151,10 +157,11 @@ namespace Demo
             for (int i = 0; i < result.Count; i++)
             {
                 var sStr = result[i];
-                resulsAll.AddRange(modsList.FindAll(y => y.ToLower().Contains(sStr.ToLower())));
+//                resulsAll.AddRange(modsList.FindAll(y => y.ToLower().Contains(sStr.ToLower())));
+                resulsAll.AddRange(new[] {modsList.Find(y => y.ToLower().Contains(sStr.ToLower()))});
             }
 
-            richTextBox4.Lines = resulsAll.ToArray();
+            richTextBox4.Lines = RemoveDuplicates(resulsAll.ToArray());
         }
     }
 }
