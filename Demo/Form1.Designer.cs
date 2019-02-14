@@ -295,6 +295,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.findmods);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Path of Searching";
             this.tabControl1.ResumeLayout(false);
