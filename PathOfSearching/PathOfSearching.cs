@@ -140,8 +140,8 @@ namespace PathOfSearching
 
         public static string[] RemoveDuplicates(string[] s)
         {
-            HashSet<string> set = new HashSet<string>(s);
-            string[] result = new string[set.Count];
+            var set = new HashSet<string>(s);
+            var result = new string[set.Count];
             set.CopyTo(result);
             return result;
         }
@@ -150,24 +150,19 @@ namespace PathOfSearching
         {
             richTextBox4.Clear();
 
-            List<string> result = findModsGlobal.Split(new char[] {','}).ToList();
+            var result = findModsGlobal.Split(',').ToList();
             result = result.Where(s => !string.IsNullOrEmpty(s)).Distinct().ToList();
 
-            List<string> modsList = new List<string>();
-            foreach (var VARIABLE in CollectList.Select(x => x.Text))
+            var modsList = CollectList.Select(x => x.Text).ToList();
+
+            var findModsOnMap = new List<string>();
+            foreach (var sStr in result)
             {
-                modsList.Add(VARIABLE);
+                var str = sStr;
+                findModsOnMap.AddRange(new[] {modsList.Find(y => y.ToLower().Contains(str.ToLower()))});
             }
 
-            List<string> resulsAll = new List<string>();
-            for (int i = 0; i < result.Count; i++)
-            {
-                var sStr = result[i];
-//                resulsAll.AddRange(modsList.FindAll(y => y.ToLower().Contains(sStr.ToLower())));
-                resulsAll.AddRange(new[] {modsList.Find(y => y.ToLower().Contains(sStr.ToLower()))});
-            }
-
-            richTextBox4.Lines = RemoveDuplicates(resulsAll.ToArray());
+            richTextBox4.Lines = RemoveDuplicates(findModsOnMap.ToArray());
         }
     }
 }
