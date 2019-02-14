@@ -72,6 +72,7 @@ namespace PathOfSearching
 
         private void clearmods_Click(object sender, EventArgs e)
         {
+            findModsGlobal = "";
             findmods.Clear();
         }
 
@@ -163,6 +164,13 @@ namespace PathOfSearching
             }
 
             richTextBox4.Lines = RemoveDuplicates(findModsOnMap.ToArray());
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            linkLabel1.LinkVisited = true;
+
+            System.Diagnostics.Process.Start("https://www.pathofexile.com/api/trade/data/stats");
         }
     }
 }

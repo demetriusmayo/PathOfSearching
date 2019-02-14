@@ -37,6 +37,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.convertToLuaRules = new System.Windows.Forms.Button();
             this.collectedCount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,6 +69,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(9, 259);
             this.button1.Name = "button1";
@@ -130,6 +133,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.linkLabel1);
+            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.convertToLuaRules);
             this.tabPage3.Controls.Add(this.collectedCount);
             this.tabPage3.Controls.Add(this.label8);
@@ -143,11 +148,34 @@
             this.tabPage3.Text = "Map of modifier names";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(297, 32);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(245, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://www.pathofexile.com/api/trade/data/stats";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Maroon;
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(355, 672);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "for developers";
+            // 
             // convertToLuaRules
             // 
             this.convertToLuaRules.BackColor = System.Drawing.Color.YellowGreen;
+            this.convertToLuaRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.convertToLuaRules.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.convertToLuaRules.Location = new System.Drawing.Point(178, 91);
+            this.convertToLuaRules.Location = new System.Drawing.Point(178, 688);
             this.convertToLuaRules.Name = "convertToLuaRules";
             this.convertToLuaRules.Size = new System.Drawing.Size(171, 23);
             this.convertToLuaRules.TabIndex = 4;
@@ -158,7 +186,7 @@
             // collectedCount
             // 
             this.collectedCount.AutoSize = true;
-            this.collectedCount.Location = new System.Drawing.Point(124, 40);
+            this.collectedCount.Location = new System.Drawing.Point(301, 11);
             this.collectedCount.Name = "collectedCount";
             this.collectedCount.Size = new System.Drawing.Size(13, 13);
             this.collectedCount.TabIndex = 3;
@@ -167,7 +195,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 40);
+            this.label8.Location = new System.Drawing.Point(185, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 13);
             this.label8.TabIndex = 2;
@@ -176,17 +204,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(187, 15);
+            this.label7.Location = new System.Drawing.Point(181, 32);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(367, 13);
+            this.label7.Size = new System.Drawing.Size(114, 13);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Update data stats from <https://www.pathofexile.com/api/trade/data/stats>";
+            this.label7.Text = "Update data stats from";
             // 
             // updateDataStats
             // 
             this.updateDataStats.BackColor = System.Drawing.Color.Black;
+            this.updateDataStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateDataStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updateDataStats.Location = new System.Drawing.Point(7, 10);
+            this.updateDataStats.Location = new System.Drawing.Point(374, 6);
             this.updateDataStats.Name = "updateDataStats";
             this.updateDataStats.Size = new System.Drawing.Size(174, 23);
             this.updateDataStats.TabIndex = 0;
@@ -209,12 +238,14 @@
             // 
             // searchMods
             // 
+            this.searchMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.searchMods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchMods.Location = new System.Drawing.Point(186, 188);
             this.searchMods.Name = "searchMods";
             this.searchMods.Size = new System.Drawing.Size(152, 23);
             this.searchMods.TabIndex = 2;
             this.searchMods.Text = "search mods on map";
-            this.searchMods.UseVisualStyleBackColor = true;
+            this.searchMods.UseVisualStyleBackColor = false;
             this.searchMods.Click += new System.EventHandler(this.searchMods_Click);
             // 
             // richTextBox4
@@ -228,7 +259,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(241, 7);
+            this.label9.Location = new System.Drawing.Point(230, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 0;
@@ -254,12 +285,15 @@
             // 
             // clearmods
             // 
-            this.clearmods.Location = new System.Drawing.Point(668, 3);
+            this.clearmods.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.clearmods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearmods.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clearmods.Location = new System.Drawing.Point(576, 3);
             this.clearmods.Name = "clearmods";
-            this.clearmods.Size = new System.Drawing.Size(75, 23);
+            this.clearmods.Size = new System.Drawing.Size(253, 23);
             this.clearmods.TabIndex = 8;
             this.clearmods.Text = "clear";
-            this.clearmods.UseVisualStyleBackColor = true;
+            this.clearmods.UseVisualStyleBackColor = false;
             this.clearmods.Click += new System.EventHandler(this.clearmods_Click);
             // 
             // PathOfSearching
@@ -312,6 +346,8 @@
         private System.Windows.Forms.Button searchMods;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
