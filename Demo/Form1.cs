@@ -36,6 +36,9 @@ namespace Demo
         // make item data to Item Mods
         private void button1_Click(object sender, EventArgs e)
         {
+            findmods.Text = "";
+            findModsGlobal = "empty";
+
             for (var i = 0; i < 50; i++)
             {
                 var state = new Lua();
@@ -134,6 +137,7 @@ namespace Demo
 
             MessageBox.Show("Done!");
         }
+
         public static string[] RemoveDuplicates(string[] s)
         {
             HashSet<string> set = new HashSet<string>(s);
@@ -141,8 +145,11 @@ namespace Demo
             set.CopyTo(result);
             return result;
         }
+
         private void searchMods_Click(object sender, EventArgs e)
         {
+            richTextBox4.Clear();
+
             List<string> result = findModsGlobal.Split(new char[] {','}).ToList();
             result = result.Where(s => !string.IsNullOrEmpty(s)).Distinct().ToList();
 
@@ -152,7 +159,6 @@ namespace Demo
                 modsList.Add(VARIABLE);
             }
 
-            var dog = "life";
             List<string> resulsAll = new List<string>();
             for (int i = 0; i < result.Count; i++)
             {
