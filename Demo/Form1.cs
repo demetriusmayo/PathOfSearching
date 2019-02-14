@@ -57,6 +57,10 @@ namespace Demo
                 findmods.Text += findmodsText;
                 // remove duplicates
                 findmods.Text = string.Join("\r\n", findmods.Lines.Distinct());
+
+                /** Link Gen For Search on Trade Api POE **/
+                //https://www.pathofexile.com/api/trade/search/Delve?redirect&source=[JSON]
+
             }
         }
 
@@ -84,7 +88,7 @@ namespace Demo
             {
                 var labelName = labels.label;
 
-                if (labelName == "Explicit" || labelName == "Implicit" || labelName == "Crafted")
+                if (labelName == "Explicit" || labelName == "Implicit" )//|| labelName == "Crafted"
                 {
                     foreach (var xEntry in labels.entries)
                     {
@@ -114,7 +118,7 @@ namespace Demo
                 {
                     using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
                     {
-                        sw.WriteLine(line);
+                        sw.WriteLine(line.ToLower());
                     }
 
                 }

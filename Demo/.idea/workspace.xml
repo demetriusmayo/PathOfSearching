@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c347c12-5359-40e8-b777-86fc904b8f5e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ModParser.lua" beforeDir="false" afterPath="$PROJECT_DIR$/ModParser.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ModParser.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="470" column="55" selection-start-line="470" selection-start-column="55" selection-end-line="470" selection-end-column="55" />
+            <state relative-caret-position="604">
+              <caret line="3440" column="40" selection-start-line="3440" selection-start-column="40" selection-end-line="3440" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -52,6 +54,8 @@
       <find>verda</find>
       <find>parseMod</find>
       <find>Modlib.pa</find>
+      <find>b</find>
+      <find>defences</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,25 +162,24 @@
       <option name="presentableId" value="Default" />
       <updated>1550072598226</updated>
       <workItem from="1550072599525" duration="5691000" />
-      <workItem from="1550078420283" duration="19983000" />
+      <workItem from="1550078420283" duration="22101000" />
+      <workItem from="1550112538727" duration="169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25674000" />
+    <option name="totallyTimeSpent" value="27961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="LuaCheck" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39935064" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -186,6 +189,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="LuaCheck" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -202,13 +206,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/ModParser.lua</url>
-          <line>3671</line>
-          <option name="timeStamp" value="25" />
+          <line>3448</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/ModParser.lua</url>
-          <line>3663</line>
-          <option name="timeStamp" value="26" />
+          <line>3443</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="lua-line">
+          <url>file://$PROJECT_DIR$/ModParser.lua</url>
+          <line>3437</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -216,8 +225,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ModParser.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="470" column="55" selection-start-line="470" selection-start-column="55" selection-end-line="470" selection-end-column="55" />
+        <state relative-caret-position="604">
+          <caret line="3440" column="40" selection-start-line="3440" selection-start-column="40" selection-end-line="3440" selection-end-column="40" />
         </state>
       </provider>
     </entry>
