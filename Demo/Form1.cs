@@ -96,8 +96,8 @@ namespace Demo
                     foreach (var xEntry in labels.entries)
                     {
                         string replacement = Regex.Replace(xEntry.text.ToString(), @"\t|\n|\r", " ");
-
-                        CollectList.Add(new Results {Id = xEntry.id, Text = replacement});
+                        var lower = replacement.ToLower();
+                        CollectList.Add(new Results {Id = xEntry.id, Text = lower});
                     }
                 }
 
@@ -153,6 +153,8 @@ namespace Demo
                 var sStr = result[i];
                 resulsAll.AddRange(modsList.FindAll(y => y.ToLower().Contains(sStr.ToLower())));
             }
+
+            richTextBox4.Lines = resulsAll.ToArray();
         }
     }
 }
