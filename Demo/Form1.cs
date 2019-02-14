@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Leaf.xNet;
 using NLua;
@@ -15,9 +17,16 @@ namespace Demo
 {
     public partial class Form1 : Form
     {
+        public static List<Results> CollectList;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        static Form1()
+        {
+            CollectList = new List<Results>();
         }
 
         // make item data to Item Mods
@@ -56,7 +65,7 @@ namespace Demo
             findmods.Clear();
         }
 
-        class Results
+        public class Results
         {
             public string Id { get; set; }
             public string Text { get; set; }
@@ -68,25 +77,55 @@ namespace Demo
             var clearResp = httpRequest.GetThroughCloudflare("https://www.pathofexile.com/api/trade/data/stats");
             dynamic x = JsonConvert.DeserializeObject(clearResp.ToString());
             var result = x.result;
-            var collectList = new List<Results>();
-            collectList.Clear();
+            CollectList.Clear();
             collectedCount.Text = "0";
 
             foreach (var labels in result)
             {
                 var labelName = labels.label;
 
-
                 if (labelName == "Explicit" || labelName == "Implicit" || labelName == "Crafted")
                 {
                     foreach (var xEntry in labels.entries)
                     {
-                        collectList.Add(new Results {Id = xEntry.id, Text = xEntry.text});
+                        string replacement = Regex.Replace(xEntry.text.ToString(), @"\t|\n|\r", " ");
+
+                        CollectList.Add(new Results { Id = xEntry.id, Text = replacement });
                     }
                 }
 
-                collectedCount.Text = collectList.Count.ToString();
+                collectedCount.Text = CollectList.Count.ToString();
             }
+        }
+
+        private void convertToLuaRules_Click(object sender, EventArgs e)
+        {
+            /* Example
+               ["life"] = "Life",
+               ["maximum life"] = "Life",
+               ["mana"] = "Mana",
+             */
+            string line = "";
+            foreach (var convResult in CollectList)
+            {
+                line = "[\""+convResult.Text+"\"] = \""+convResult.Id+"\",";
+                string writePath = @"temp_modparser.txt";
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
+                    {
+                        sw.WriteLine(line);
+                    }
+
+                }
+                catch (Exception _exception)
+                {
+                    Console.WriteLine(_exception.Message);
+                }
+
+                //ModParserRichTextBox.Text += line;
+            }
+  MessageBox.Show("Done!");
         }
     }
 }

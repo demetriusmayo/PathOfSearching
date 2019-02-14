@@ -39,13 +39,14 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.convertToLuaRules = new System.Windows.Forms.Button();
+            this.collectedCount = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.updateDataStats = new System.Windows.Forms.Button();
             this.findmods = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.clearmods = new System.Windows.Forms.Button();
-            this.updateDataStats = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.collectedCount = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -147,6 +148,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.convertToLuaRules);
             this.tabPage3.Controls.Add(this.collectedCount);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label7);
@@ -156,8 +158,59 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(554, 717);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Api Trade";
+            this.tabPage3.Text = "Map of modifier names";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // convertToLuaRules
+            // 
+            this.convertToLuaRules.BackColor = System.Drawing.Color.YellowGreen;
+            this.convertToLuaRules.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.convertToLuaRules.Location = new System.Drawing.Point(178, 91);
+            this.convertToLuaRules.Name = "convertToLuaRules";
+            this.convertToLuaRules.Size = new System.Drawing.Size(171, 23);
+            this.convertToLuaRules.TabIndex = 4;
+            this.convertToLuaRules.Text = "Convert to ModParser rules.";
+            this.convertToLuaRules.UseVisualStyleBackColor = false;
+            this.convertToLuaRules.Click += new System.EventHandler(this.convertToLuaRules_Click);
+            // 
+            // collectedCount
+            // 
+            this.collectedCount.AutoSize = true;
+            this.collectedCount.Location = new System.Drawing.Point(124, 40);
+            this.collectedCount.Name = "collectedCount";
+            this.collectedCount.Size = new System.Drawing.Size(13, 13);
+            this.collectedCount.TabIndex = 3;
+            this.collectedCount.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Collected id-text pairs:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(187, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(367, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Update data stats from <https://www.pathofexile.com/api/trade/data/stats>";
+            // 
+            // updateDataStats
+            // 
+            this.updateDataStats.BackColor = System.Drawing.Color.Black;
+            this.updateDataStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updateDataStats.Location = new System.Drawing.Point(7, 10);
+            this.updateDataStats.Name = "updateDataStats";
+            this.updateDataStats.Size = new System.Drawing.Size(174, 23);
+            this.updateDataStats.TabIndex = 0;
+            this.updateDataStats.Text = "Update all mods";
+            this.updateDataStats.UseVisualStyleBackColor = false;
+            this.updateDataStats.Click += new System.EventHandler(this.updateDataStats_Click);
             // 
             // findmods
             // 
@@ -186,45 +239,6 @@
             this.clearmods.Text = "clear";
             this.clearmods.UseVisualStyleBackColor = true;
             this.clearmods.Click += new System.EventHandler(this.clearmods_Click);
-            // 
-            // updateDataStats
-            // 
-            this.updateDataStats.BackColor = System.Drawing.Color.Black;
-            this.updateDataStats.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updateDataStats.Location = new System.Drawing.Point(7, 10);
-            this.updateDataStats.Name = "updateDataStats";
-            this.updateDataStats.Size = new System.Drawing.Size(174, 23);
-            this.updateDataStats.TabIndex = 0;
-            this.updateDataStats.Text = "Update all mods";
-            this.updateDataStats.UseVisualStyleBackColor = false;
-            this.updateDataStats.Click += new System.EventHandler(this.updateDataStats_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(187, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(367, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Updata data stats from <https://www.pathofexile.com/api/trade/data/stats>";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Collected id-text pairs:";
-            // 
-            // collectedCount
-            // 
-            this.collectedCount.AutoSize = true;
-            this.collectedCount.Location = new System.Drawing.Point(124, 40);
-            this.collectedCount.Name = "collectedCount";
-            this.collectedCount.Size = new System.Drawing.Size(13, 13);
-            this.collectedCount.TabIndex = 3;
-            this.collectedCount.Text = "0";
             // 
             // Form1
             // 
@@ -272,6 +286,7 @@
         private System.Windows.Forms.Button updateDataStats;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label collectedCount;
+        private System.Windows.Forms.Button convertToLuaRules;
     }
 }
 
