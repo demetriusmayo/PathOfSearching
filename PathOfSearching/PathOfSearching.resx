@@ -119,33 +119,20 @@
   </resheader>
   <data name="richTextBox3.Text" xml:space="preserve">
     <value>Rarity: Rare
-Sorrow Impaler
-Thorn Rapier
---------
-One Handed Sword
-Quality: +20% (augmented)
-Physical Damage: 23-53 (augmented)
-Critical Strike Chance: 5.70%
-Attacks per Second: 1.78 (augmented)
-Weapon Range: 12
+Corruption Spike
+Spike-Point Arrow Quiver
 --------
 Requirements:
-Level: 64
-Dex: 113
+Level: 45
 --------
-Sockets: G-R B 
+Item Level: 61
 --------
-Item Level: 84
++31 to maximum Life
++22% to Fire Resistance
++29% to Cold Resistance
++18% to Lightning Resistance
 --------
-+35% to Global Critical Strike Multiplier
---------
-27% increased Attack Speed
-+34% to Global Critical Strike Multiplier
-Gain 18% of Physical Damage as Extra Cold Damage
---------
-Shaper Item
---------
-Note: ~price 8 exa</value>
+Note: ~price 1 chance</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
