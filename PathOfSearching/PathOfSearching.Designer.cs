@@ -43,14 +43,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.updateDataStats = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.poetradepost = new System.Windows.Forms.Button();
+            this.tradeLink = new System.Windows.Forms.Button();
             this.searchMods = new System.Windows.Forms.Button();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.findmods = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.clearmods = new System.Windows.Forms.Button();
-            this.tradeLink = new System.Windows.Forms.Button();
-            this.poetradepost = new System.Windows.Forms.Button();
+            this.findMod = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -73,9 +74,9 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(9, 259);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Convert";
+            this.button1.Text = "Find mods (lua)";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -92,6 +93,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.findMod);
             this.tabPage1.Controls.Add(this.richTextBox3);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button1);
@@ -218,6 +220,32 @@
             this.tabPage4.Text = "Search Mods";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // poetradepost
+            // 
+            this.poetradepost.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.poetradepost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.poetradepost.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.poetradepost.Location = new System.Drawing.Point(372, 188);
+            this.poetradepost.Name = "poetradepost";
+            this.poetradepost.Size = new System.Drawing.Size(75, 23);
+            this.poetradepost.TabIndex = 4;
+            this.poetradepost.Text = "poe.trade";
+            this.poetradepost.UseVisualStyleBackColor = false;
+            this.poetradepost.Click += new System.EventHandler(this.poetradepost_Click);
+            // 
+            // tradeLink
+            // 
+            this.tradeLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.tradeLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tradeLink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tradeLink.Location = new System.Drawing.Point(267, 188);
+            this.tradeLink.Name = "tradeLink";
+            this.tradeLink.Size = new System.Drawing.Size(99, 23);
+            this.tradeLink.TabIndex = 3;
+            this.tradeLink.Text = "Off. Trade";
+            this.tradeLink.UseVisualStyleBackColor = false;
+            this.tradeLink.Click += new System.EventHandler(this.tradeLink_Click);
+            // 
             // searchMods
             // 
             this.searchMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -278,31 +306,17 @@
             this.clearmods.UseVisualStyleBackColor = false;
             this.clearmods.Click += new System.EventHandler(this.clearmods_Click);
             // 
-            // tradeLink
+            // findMod
             // 
-            this.tradeLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.tradeLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tradeLink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tradeLink.Location = new System.Drawing.Point(267, 188);
-            this.tradeLink.Name = "tradeLink";
-            this.tradeLink.Size = new System.Drawing.Size(99, 23);
-            this.tradeLink.TabIndex = 3;
-            this.tradeLink.Text = "Off. Trade";
-            this.tradeLink.UseVisualStyleBackColor = false;
-            this.tradeLink.Click += new System.EventHandler(this.tradeLink_Click);
-            // 
-            // poetradepost
-            // 
-            this.poetradepost.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.poetradepost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.poetradepost.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.poetradepost.Location = new System.Drawing.Point(372, 188);
-            this.poetradepost.Name = "poetradepost";
-            this.poetradepost.Size = new System.Drawing.Size(75, 23);
-            this.poetradepost.TabIndex = 4;
-            this.poetradepost.Text = "poe.trade";
-            this.poetradepost.UseVisualStyleBackColor = false;
-            this.poetradepost.Click += new System.EventHandler(this.poetradepost_Click);
+            this.findMod.BackColor = System.Drawing.Color.Salmon;
+            this.findMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.findMod.Location = new System.Drawing.Point(473, 259);
+            this.findMod.Name = "findMod";
+            this.findMod.Size = new System.Drawing.Size(75, 23);
+            this.findMod.TabIndex = 6;
+            this.findMod.Text = "Find mods";
+            this.findMod.UseVisualStyleBackColor = false;
+            this.findMod.Click += new System.EventHandler(this.findMod_Click);
             // 
             // PathOfSearching
             // 
@@ -356,6 +370,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button tradeLink;
         private System.Windows.Forms.Button poetradepost;
+        private System.Windows.Forms.Button findMod;
     }
 }
 

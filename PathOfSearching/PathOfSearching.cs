@@ -31,6 +31,35 @@ namespace PathOfSearching
             CollectList = new List<Results>();
         }
 
+        private void findMod_Click(object sender, EventArgs e)
+        {
+            findmods.Text = "";
+            findModsGlobal = "empty";
+            List<string> findModsOnMap = new List<string>();
+            var findmodsText = "";
+            foreach (var testLine in richTextBox3.Lines)
+            {
+                string pattern = @"[0-9]*\.?[0-9]+";
+
+                var replace = testLine.Replace("+", "");
+                var replace2 = replace.Replace("Level", "Bullshit");
+
+                MatchCollection matches = Regex.Matches(replace2, pattern);
+                var modsList = CollectList.Select(x => x.Text).ToList();
+
+                for (var index = 0; index < matches.Count; index++)
+                {
+                    var mod = Regex.Replace(replace2, @"[0-9]*\.?[0-9]+", "#");
+                    // search mod
+                    findModsOnMap.AddRange(new[] {modsList.Find(y => y.ToLower().Contains(mod.ToLower()))});
+                    findmodsText += findModsOnMap[findModsOnMap.Count - 1] + "\r\n";
+                }
+            }
+
+            findmods.Text += findmodsText.Trim();
+            findModsGlobal = string.Join(",", findmods.Lines.Distinct());
+        }
+
         // make item data to Item Mods
         private void button1_Click(object sender, EventArgs e)
         {
@@ -146,7 +175,8 @@ namespace PathOfSearching
         private void searchMods_Click(object sender, EventArgs e)
         {
             richTextBox4.Clear();
-
+            poeTradeLink = "";
+            poet = "";
             var result = findModsGlobal.Split(',').ToList();
             result = result.Where(s => !string.IsNullOrEmpty(s)).Distinct().ToList();
 
@@ -173,7 +203,8 @@ namespace PathOfSearching
 //                    }
                 };
 
-                poet += "&mod_name=" + System.Uri.EscapeDataString(findModsOnMap[index]) + "&mod_min=&mod_max=&mod_weight=";
+                poet += "&mod_name=" + System.Uri.EscapeDataString(findModsOnMap[index]) +
+                        "&mod_min=&mod_max=&mod_weight=";
                 json += "," + JsonConvert.SerializeObject(obj, Formatting.None);
                 //////////////////////
             }
@@ -213,15 +244,17 @@ namespace PathOfSearching
                 {
                     string.Concat(new object[]
                     {
-                        "league=Betrayal&type=&base=&name=&dmg_min=&dmg_max=&aps_min=&aps_max=&crit_min=&crit_max=&dps_min=&dps_max=&edps_min=&edps_max=&pdps_min=&pdps_max=&armour_min=&armour_max=&evasion_min=&evasion_max=&shield_min=&shield_max=&block_min=&block_max=&sockets_min=&sockets_max=&link_min=&link_max=&sockets_r=&sockets_g=&sockets_b=&sockets_w=&linked_r=&linked_g=&linked_b=&linked_w=&rlevel_min=&rlevel_max=&rstr_min=&rstr_max=&rdex_min=&rdex_max=&rint_min=&rint_max="+(poet)+"&q_min=&q_max=&level_min=&level_max=&ilvl_min=&ilvl_max=&rarity=&progress_min=&progress_max=&sockets_a_min=&sockets_a_max=&map_series=&altart=&identified=&corrupted=&shaper=&elder=&crafted=&enchanted=&mirrored=&veiled=&seller=&thread=&online=x&capquality=x&buyout_min=&buyout_max=&buyout_currency=&has_buyout=&exact_currency="
+                        "league=Betrayal&type=&base=&name=&dmg_min=&dmg_max=&aps_min=&aps_max=&crit_min=&crit_max=&dps_min=&dps_max=&edps_min=&edps_max=&pdps_min=&pdps_max=&armour_min=&armour_max=&evasion_min=&evasion_max=&shield_min=&shield_max=&block_min=&block_max=&sockets_min=&sockets_max=&link_min=&link_max=&sockets_r=&sockets_g=&sockets_b=&sockets_w=&linked_r=&linked_g=&linked_b=&linked_w=&rlevel_min=&rlevel_max=&rstr_min=&rstr_max=&rdex_min=&rdex_max=&rint_min=&rint_max=" +
+                        (poet) +
+                        "&q_min=&q_max=&level_min=&level_max=&ilvl_min=&ilvl_max=&rarity=&progress_min=&progress_max=&sockets_a_min=&sockets_a_max=&map_series=&altart=&identified=&corrupted=&shaper=&elder=&crafted=&enchanted=&mirrored=&veiled=&seller=&thread=&online=x&capquality=x&buyout_min=&buyout_max=&buyout_currency=&has_buyout=&exact_currency="
                     })
                 });
                 request.AllowAutoRedirect = false;
 //                var linkAfter = Regex.Replace(data, "%20", "+");
 
-                var str2 = request.Post("http://poe.trade/search", data, "application/x-www-form-urlencoded").ToString();
+                var str2 = request.Post("http://poe.trade/search", data, "application/x-www-form-urlencoded")
+                    .ToString();
                 System.Diagnostics.Process.Start(request.Response.Location);
-
             }
         }
     }
