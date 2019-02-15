@@ -3,5 +3,6 @@
 
 - [x] modList search
 - [ ] remove NLua
+- [ ] Items Manager (GUI)
 
 ![](pathofsearching.gif)
