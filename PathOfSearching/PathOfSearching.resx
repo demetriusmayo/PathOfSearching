@@ -118,42 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox3.Text" xml:space="preserve">
-    <value>Rarity: Unique
-Queen of the Forest
-Destiny Leather
---------
-Evasion Rating: 2037 (augmented)
---------
-Requirements:
-Level: 59
-Dex: 160
---------
-Sockets: G G 
---------
-Item Level: 76
---------
-5% increased maximum Energy Shield
---------
-239% increased Evasion Rating
-+60 to maximum Life
-+10% to Fire Resistance
-+31% to Cold Resistance
-+15% to Lightning Resistance
-25% reduced Movement Speed
-1% increased Movement Speed per 600 Evasion Rating, up to 75%
--50 Physical Damage taken when Hit by Animals
---------
-Shedding away her regal past, 
-she forged a new destiny. 
-Sacrificing the ephemeral joys of man, 
-she embraced the eternal grasp of nature. 
-Seizing her one true wish, 
-she found peace at last.
---------
-Corrupted
---------
-Note: ~price 10 chaos
-</value>
+    <value>Gale Pace
+Sorcerer Boots
+Unique ID: 040b6211a82914d7f283e0c56464af69d56fa71b488d3c3d51e6bbef4a023a43
+Item Level: 84
+Quality: 28
+Sockets: R-R-G-W
+LevelReq: 67
+Implicits: 1
+{crafted}16% increased Attack and Cast Speed if you've Killed Recently
++54 to Intelligence
+84% increased Energy Shield
++45% to Fire Resistance
++44% to Cold Resistance
+30% increased Movement Speed
+{crafted}+32 to maximum Energy Shield</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

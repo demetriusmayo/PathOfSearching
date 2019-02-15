@@ -4111,6 +4111,7 @@ local modNameList = {
 ["increased quantity of fish caught"] = "implicit.stat_3802667447",
 
 }
+local modTo
 -- Scan a line for the earliest and longest match from the pattern list
 -- If a match is found, returns the corresponding value from the pattern list, plus the remainder of the line and a table of captures
 local function scan(line, patternList, plain)
@@ -4123,6 +4124,7 @@ local function scan(line, patternList, plain)
 		local index, endIndex, cap1, cap2, cap3, cap4, cap5 = lineLower:find(pattern, 1, plain)
 		if index and (not bestIndex or index < bestIndex or (index == bestIndex and (endIndex > bestEndIndex or (endIndex == bestEndIndex and #pattern > #bestPattern)))) then
 			bestIndex = index
+			--modTo = patternVal
             table.insert(makeQuery, pattern)
 			bestEndIndex = endIndex
 			bestPattern = pattern
@@ -4132,6 +4134,7 @@ local function scan(line, patternList, plain)
 			bestCaps = { cap1, cap2, cap3, cap4, cap5 }
 		end
 	end
+	
 	if makeQuery then
 		return makeQuery
         --bestEnd + 1, -1), bestCaps
@@ -4145,7 +4148,7 @@ function parseMod(line)
     --end scanning
     -- Scan for modifier form
     --ParseRaw("Rarity: Rare\nBeast Slicer\nApex Rapier\n--------\nOne Handed Sword\nQuality: +24% (augmented)\nPhysical Damage: 65-151 (augmented)\nCritical Strike Chance: 5.70%\nAttacks per Second: 1.40\nWeapon Range: 12\n--------\nRequirements:\nLevel: 64\nDex: 176\n--------\nSockets: G-B-G \n--------\nItem Level: 80\n--------\n+35% to Global Critical Strike Multiplier\n--------\nSocketed Movement Skills have no Mana Cost\n+5 Life gained for each Enemy hit by Attacks\nGain 13% of Physical Damage as Extra Fire Damage\nGain 20% of Physical Damage as Extra Cold Damage\n20% chance to Poison on Hit\n101% increased Physical Damage\n20% chance to Blind Enemies on hit\n--------\nShaper Item\n--------\nNote: ~price 1 exa\n")
-    return line
+    return line --, modTo
 end
 -- --debug
 --if not package.loaded['modulename'] then

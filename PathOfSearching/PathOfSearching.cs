@@ -22,6 +22,7 @@ namespace PathOfSearching
     {
         public static List<Results> CollectList;
         public static string findModsGlobal;
+        public static string poeTradeLink;
 
         public PathOfSearching()
         {
@@ -44,7 +45,8 @@ namespace PathOfSearching
                 var state = new Lua();
                 try
                 {
-                    state.DoFile(@"C:\Users\WORK\Desktop\POE_Tools\MakeGearGreat\PathOfSearching\PathOfSearching\ModParser.lua");
+                    state.DoFile(
+                        @"C:\Users\WORK\Desktop\POE_Tools\MakeGearGreat\PathOfSearching\PathOfSearching\ModParser.lua");
                 }
                 catch (NLua.Exceptions.LuaScriptException ex)
                 {
@@ -60,7 +62,6 @@ namespace PathOfSearching
                     findmodsText += variable.Value + "\r\n";
                 }
 
-                label5.Text = findmodsText;
                 findmods.Text += findmodsText;
                 // remove duplicates
                 findmods.Text = string.Join("\r\n", findmods.Lines.Distinct());
@@ -155,15 +156,36 @@ namespace PathOfSearching
             var modsList = CollectList.Select(x => x.Text).ToList();
 
             var findModsOnMap = new List<string>();
-            foreach (var sStr in result)
+            string json = "";
+            for (var index = 0; index < result.Count; index++)
             {
+                var sStr = result[index];
                 var str = sStr;
                 findModsOnMap.AddRange(new[] {modsList.Find(y => y.ToLower().Contains(str.ToLower()))});
+                var file = CollectList.Where(f => f.Text == findModsOnMap[index]).OrderByDescending(f => f.Id)
+                    .FirstOrDefault();
+                // Make query Json
+                var obj = new Filters
+                {
+                    id = file.Id,
+                    disabled = false,
+//                    value = new FiltersValue
+//                    {
+//                        max = 95,
+//                        min = 1
+//                    }
+                };
+
+                json += "," + JsonConvert.SerializeObject(obj, Formatting.None);
+                //////////////////////
             }
 
+            var substring = json.Substring(1);
             richTextBox4.Lines = RemoveDuplicates(findModsOnMap.ToArray());
+            poeTradeLink = "https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source={\"query\":{\"status\":{\"option\":\"online\"},\"stats\":[{\"type\":\"and\",\"filters\":["+substring+"],\"disabled\":false}]}}";
             /** Link Gen For Search on Trade Api POE **/
-            //https://www.pathofexile.com/api/trade/search/Delve?redirect&source=[JSON]
+            //https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source=[JSON]
+            //{"query":{"status":{"option":"online"},"stats":[{"type":"and","filters":[],"disabled":false}]}}
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -172,5 +194,24 @@ namespace PathOfSearching
 
             System.Diagnostics.Process.Start("https://www.pathofexile.com/api/trade/data/stats");
         }
+
+        private void tradeLink_Click(object sender, EventArgs e)
+        {
+            var link = Regex.Replace(poeTradeLink,"\"", "\"\"\"");
+            System.Diagnostics.Process.Start(link);
+        }
+    }
+
+    public class FiltersValue
+    {
+        public int min;
+        public int max;
+    }
+
+    public class Filters
+    {
+//        public FiltersValue value;
+        public string id { get; set; }
+        public bool disabled { get; set; }
     }
 }

@@ -34,8 +34,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +49,7 @@
             this.findmods = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.clearmods = new System.Windows.Forms.Button();
+            this.tradeLink = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -93,8 +92,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.richTextBox3);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -109,27 +106,9 @@
             // 
             this.richTextBox3.Location = new System.Drawing.Point(9, 20);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(672, 233);
+            this.richTextBox3.Size = new System.Drawing.Size(542, 233);
             this.richTextBox3.TabIndex = 5;
             this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 288);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "(.?)";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 289);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "mods";
             // 
             // tabPage3
             // 
@@ -225,6 +204,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.tradeLink);
             this.tabPage4.Controls.Add(this.searchMods);
             this.tabPage4.Controls.Add(this.richTextBox4);
             this.tabPage4.Controls.Add(this.label9);
@@ -240,7 +220,7 @@
             // 
             this.searchMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.searchMods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchMods.Location = new System.Drawing.Point(186, 188);
+            this.searchMods.Location = new System.Drawing.Point(109, 188);
             this.searchMods.Name = "searchMods";
             this.searchMods.Size = new System.Drawing.Size(152, 23);
             this.searchMods.TabIndex = 2;
@@ -296,6 +276,19 @@
             this.clearmods.UseVisualStyleBackColor = false;
             this.clearmods.Click += new System.EventHandler(this.clearmods_Click);
             // 
+            // tradeLink
+            // 
+            this.tradeLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.tradeLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tradeLink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tradeLink.Location = new System.Drawing.Point(267, 188);
+            this.tradeLink.Name = "tradeLink";
+            this.tradeLink.Size = new System.Drawing.Size(99, 23);
+            this.tradeLink.TabIndex = 3;
+            this.tradeLink.Text = "Open in browser";
+            this.tradeLink.UseVisualStyleBackColor = false;
+            this.tradeLink.Click += new System.EventHandler(this.tradeLink_Click);
+            // 
             // PathOfSearching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,10 +321,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         public static System.Windows.Forms.Label bestVal;
-        private System.Windows.Forms.Label label3;
         public static System.Windows.Forms.RichTextBox richTextBox2;
         public static System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label label5;
         public System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox findmods;
@@ -348,6 +339,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button tradeLink;
     }
 }
 
