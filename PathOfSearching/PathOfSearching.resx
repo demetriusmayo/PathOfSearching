@@ -119,20 +119,30 @@
   </resheader>
   <data name="richTextBox3.Text" xml:space="preserve">
     <value>Rarity: Rare
-Corruption Spike
-Spike-Point Arrow Quiver
+Brimstone Scratch
+Apex Rapier
+--------
+One Handed Sword
+Quality: +20% (augmented)
+Physical Damage: 35-80 (augmented)
+Critical Strike Chance: 5.70%
+Attacks per Second: 1.40
+Weapon Range: 12
 --------
 Requirements:
-Level: 45
+Level: 64
+Dex: 176
 --------
-Item Level: 61
+Sockets: G-G-R 
 --------
-+31 to maximum Life
-+22% to Fire Resistance
-+29% to Cold Resistance
-+18% to Lightning Resistance
+Item Level: 80
 --------
-Note: ~price 1 chance</value>
++35% to Global Critical Strike Multiplier
+--------
+Gain 20% of Physical Damage as Extra Fire Damage
+Gain 20% of Physical Damage as Extra Cold Damage
+--------
+Shaper Item</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
