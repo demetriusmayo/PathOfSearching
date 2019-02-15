@@ -1,2 +1,0 @@
-﻿Парсинг item data с разделением на explicit/implicit
-modList to C#
