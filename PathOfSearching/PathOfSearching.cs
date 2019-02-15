@@ -65,8 +65,6 @@ namespace PathOfSearching
                 // remove duplicates
                 findmods.Text = string.Join("\r\n", findmods.Lines.Distinct());
                 findModsGlobal = string.Join(",", findmods.Lines.Distinct());
-                /** Link Gen For Search on Trade Api POE **/
-                //https://www.pathofexile.com/api/trade/search/Delve?redirect&source=[JSON]
             }
         }
 
@@ -164,6 +162,8 @@ namespace PathOfSearching
             }
 
             richTextBox4.Lines = RemoveDuplicates(findModsOnMap.ToArray());
+            /** Link Gen For Search on Trade Api POE **/
+            //https://www.pathofexile.com/api/trade/search/Delve?redirect&source=[JSON]
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
