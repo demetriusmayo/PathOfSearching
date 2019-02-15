@@ -197,7 +197,8 @@ namespace PathOfSearching
 
         private void tradeLink_Click(object sender, EventArgs e)
         {
-            var link = Regex.Replace(poeTradeLink,"\"", "\"\"\"");
+            var linkBefore = Regex.Replace(poeTradeLink, "implicit", "explicit");
+            var link = Regex.Replace(linkBefore, "\"", "\"\"\"");
             System.Diagnostics.Process.Start(link);
         }
     }
