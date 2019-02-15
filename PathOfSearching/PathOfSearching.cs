@@ -27,14 +27,38 @@ namespace PathOfSearching
             var lines = File.ReadAllLines(System.Environment.CurrentDirectory + "\\temp_modparser.txt");
             foreach (var line in lines)
             {
+                string matched = null;
+                string matched2 = null;
+                Regex expression = new Regex(@"\[\""(.+?)\""\]");
+                var results = expression.Matches(line);
+                foreach (Match match in results)
+                {
+                    matched = match.Groups[1].Value;
+                }
 
+                Regex expression2 = new Regex(@"= ""(.+?)""");
+                var results2 = expression2.Matches(line);
+                foreach (Match match in results2)
+                {
+                    matched2 = match.Groups[1].Value;
+                }
+
+
+                CollectList.Add(new Results {Id = matched2, Text = matched});
+
+                //["# to maximum Life"] = "explicit.stat_3299347043"
             }
 
+
+
             InitializeComponent();
+            collectedCount.Text = CollectList.Count.ToString();
+
         }
 
         static PathOfSearching()
         {
+
             CollectList = new List<Results>();
         }
 
