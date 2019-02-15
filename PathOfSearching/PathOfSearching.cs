@@ -50,15 +50,12 @@ namespace PathOfSearching
             }
 
 
-
             InitializeComponent();
             collectedCount.Text = CollectList.Count.ToString();
-
         }
 
         static PathOfSearching()
         {
-
             CollectList = new List<Results>();
         }
 
@@ -70,12 +67,10 @@ namespace PathOfSearching
             var findmodsText = "";
             foreach (var testLine in richTextBox3.Lines)
             {
-                string pattern = @"[0-9]*\.?[0-9]+";
-
                 var replace = testLine.Replace("+", "");
                 var replace2 = replace.Replace("Level", "Bullshit");
 
-                MatchCollection matches = Regex.Matches(replace2, pattern);
+                MatchCollection matches = Regex.Matches(replace2, @"[0-9]*\.?[0-9]+");
                 var modsList = CollectList.Select(x => x.Text).ToList();
 
                 for (var index = 0; index < matches.Count; index++)
@@ -240,12 +235,33 @@ namespace PathOfSearching
                 //////////////////////
             }
 
+
+           var jsonReplace2 = Regex.Replace(json, "implicit", "explicit");
+
+           Regex reg = new Regex("explicit");
+           var jsonReplace = reg.Replace(jsonReplace2, "implicit", 1);
+//           try
+//           {
+//               string text = jsonReplace;
+//               string pattern = @"explicit";
+//               Regex myRegex = new Regex(pattern, RegexOptions.IgnoreCase);
+//
+//               Match m = myRegex.Match(text);   // m is the first match
+//               while (m.Success)
+//               {
+//                   // Do something with m
+//                   m = m.NextMatch();              // more matches
+//               }
+//           }
+//           catch (Exception exception)
+//           {
+//               Console.WriteLine(exception);
+//               throw;
+//           }
             poet += "&group_type=And&group_min=&group_max=&group_count=" + findModsOnMap.Count + "";
-            var substring = json.Substring(1);
+            var substring = jsonReplace.Substring(1);
             richTextBox4.Lines = RemoveDuplicates(findModsOnMap.ToArray());
-            poeTradeLink =
-                "https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source={\"query\":{\"status\":{\"option\":\"online\"},\"stats\":[{\"type\":\"and\",\"filters\":[" +
-                substring + "],\"disabled\":false}]}}";
+            poeTradeLink = "https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source={\"query\":{\"status\":{\"option\":\"online\"},\"stats\":[{\"type\":\"and\",\"filters\":[" +  substring + "],\"disabled\":false}]}}";
             /** Link Gen For Search on Trade Api POE **/
             //https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source=[JSON]
             //{"query":{"status":{"option":"online"},"stats":[{"type":"and","filters":[],"disabled":false}]}}
@@ -260,8 +276,8 @@ namespace PathOfSearching
 
         private void tradeLink_Click(object sender, EventArgs e)
         {
-            var linkBefore = Regex.Replace(poeTradeLink, "implicit", "explicit");
-            var link = Regex.Replace(linkBefore, "\"", "\"\"\"");
+//            var linkBefore = Regex.Replace(poeTradeLink, "implicit", "explicit");
+            var link = Regex.Replace(poeTradeLink, "\"", "\"\"\"");
             System.Diagnostics.Process.Start(link);
         }
 
