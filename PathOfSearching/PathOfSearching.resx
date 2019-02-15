@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox3.Text" xml:space="preserve">
-    <value>Gale Pace
-Sorcerer Boots
-Unique ID: 040b6211a82914d7f283e0c56464af69d56fa71b488d3c3d51e6bbef4a023a43
-Item Level: 84
-Quality: 28
-Sockets: R-R-G-W
-LevelReq: 67
-Implicits: 1
-{crafted}16% increased Attack and Cast Speed if you've Killed Recently
-+54 to Intelligence
-84% increased Energy Shield
-+45% to Fire Resistance
-+44% to Cold Resistance
-30% increased Movement Speed
-{crafted}+32 to maximum Energy Shield</value>
+    <value>Rarity: Rare
+Corruption Spike
+Spike-Point Arrow Quiver
+--------
+Requirements:
+Level: 45
+--------
+Item Level: 61
+--------
++31 to maximum Life
++22% to Fire Resistance
++29% to Cold Resistance
++18% to Lightning Resistance
+--------
+Note: ~price 1 chance</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
