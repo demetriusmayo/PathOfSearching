@@ -50,6 +50,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.clearmods = new System.Windows.Forms.Button();
             this.tradeLink = new System.Windows.Forms.Button();
+            this.poetradepost = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -204,6 +205,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.poetradepost);
             this.tabPage4.Controls.Add(this.tradeLink);
             this.tabPage4.Controls.Add(this.searchMods);
             this.tabPage4.Controls.Add(this.richTextBox4);
@@ -285,9 +287,22 @@
             this.tradeLink.Name = "tradeLink";
             this.tradeLink.Size = new System.Drawing.Size(99, 23);
             this.tradeLink.TabIndex = 3;
-            this.tradeLink.Text = "Open in browser";
+            this.tradeLink.Text = "Off. Trade";
             this.tradeLink.UseVisualStyleBackColor = false;
             this.tradeLink.Click += new System.EventHandler(this.tradeLink_Click);
+            // 
+            // poetradepost
+            // 
+            this.poetradepost.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.poetradepost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.poetradepost.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.poetradepost.Location = new System.Drawing.Point(372, 188);
+            this.poetradepost.Name = "poetradepost";
+            this.poetradepost.Size = new System.Drawing.Size(75, 23);
+            this.poetradepost.TabIndex = 4;
+            this.poetradepost.Text = "poe.trade";
+            this.poetradepost.UseVisualStyleBackColor = false;
+            this.poetradepost.Click += new System.EventHandler(this.poetradepost_Click);
             // 
             // PathOfSearching
             // 
@@ -340,6 +355,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button tradeLink;
+        private System.Windows.Forms.Button poetradepost;
     }
 }
 

@@ -8,10 +8,6 @@ using Leaf.xNet;
 using NLua;
 using Leaf.xNet.Services.Cloudflare;
 using Newtonsoft.Json;
-using System.Collections.ObjectModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using Newtonsoft.Json.Linq;
 
 //GenMods Parser+
 //TODO: Link Generation to Query
@@ -23,6 +19,7 @@ namespace PathOfSearching
         public static List<Results> CollectList;
         public static string findModsGlobal;
         public static string poeTradeLink;
+        public static string poet;
 
         public PathOfSearching()
         {
@@ -99,7 +96,7 @@ namespace PathOfSearching
                     foreach (var xEntry in labels.entries)
                     {
                         string replacement = Regex.Replace(xEntry.text.ToString(), @"\t|\n|\r", " ");
-                        var lower = replacement.ToLower();
+                        var lower = replacement; // toLower
                         CollectList.Add(new Results {Id = xEntry.id, Text = lower});
                     }
                 }
@@ -176,13 +173,17 @@ namespace PathOfSearching
 //                    }
                 };
 
+                poet += "&mod_name=" + System.Uri.EscapeDataString(findModsOnMap[index]) + "&mod_min=&mod_max=&mod_weight=";
                 json += "," + JsonConvert.SerializeObject(obj, Formatting.None);
                 //////////////////////
             }
 
+            poet += "&group_type=And&group_min=&group_max=&group_count=" + findModsOnMap.Count + "";
             var substring = json.Substring(1);
             richTextBox4.Lines = RemoveDuplicates(findModsOnMap.ToArray());
-            poeTradeLink = "https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source={\"query\":{\"status\":{\"option\":\"online\"},\"stats\":[{\"type\":\"and\",\"filters\":["+substring+"],\"disabled\":false}]}}";
+            poeTradeLink =
+                "https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source={\"query\":{\"status\":{\"option\":\"online\"},\"stats\":[{\"type\":\"and\",\"filters\":[" +
+                substring + "],\"disabled\":false}]}}";
             /** Link Gen For Search on Trade Api POE **/
             //https://www.pathofexile.com/api/trade/search/Betrayal?redirect&source=[JSON]
             //{"query":{"status":{"option":"online"},"stats":[{"type":"and","filters":[],"disabled":false}]}}
@@ -200,6 +201,28 @@ namespace PathOfSearching
             var linkBefore = Regex.Replace(poeTradeLink, "implicit", "explicit");
             var link = Regex.Replace(linkBefore, "\"", "\"\"\"");
             System.Diagnostics.Process.Start(link);
+        }
+
+        private void poetradepost_Click(object sender, EventArgs e)
+        {
+            using (var request = new HttpRequest())
+            {
+                request.UserAgent =
+                    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36";
+                string data = string.Concat(new string[]
+                {
+                    string.Concat(new object[]
+                    {
+                        "league=Betrayal&type=&base=&name=&dmg_min=&dmg_max=&aps_min=&aps_max=&crit_min=&crit_max=&dps_min=&dps_max=&edps_min=&edps_max=&pdps_min=&pdps_max=&armour_min=&armour_max=&evasion_min=&evasion_max=&shield_min=&shield_max=&block_min=&block_max=&sockets_min=&sockets_max=&link_min=&link_max=&sockets_r=&sockets_g=&sockets_b=&sockets_w=&linked_r=&linked_g=&linked_b=&linked_w=&rlevel_min=&rlevel_max=&rstr_min=&rstr_max=&rdex_min=&rdex_max=&rint_min=&rint_max="+(poet)+"&q_min=&q_max=&level_min=&level_max=&ilvl_min=&ilvl_max=&rarity=&progress_min=&progress_max=&sockets_a_min=&sockets_a_max=&map_series=&altart=&identified=&corrupted=&shaper=&elder=&crafted=&enchanted=&mirrored=&veiled=&seller=&thread=&online=x&capquality=x&buyout_min=&buyout_max=&buyout_currency=&has_buyout=&exact_currency="
+                    })
+                });
+                request.AllowAutoRedirect = false;
+//                var linkAfter = Regex.Replace(data, "%20", "+");
+
+                var str2 = request.Post("http://poe.trade/search", data, "application/x-www-form-urlencoded").ToString();
+                System.Diagnostics.Process.Start(request.Response.Location);
+
+            }
         }
     }
 
