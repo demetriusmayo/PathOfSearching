@@ -23,6 +23,13 @@ namespace PathOfSearching
 
         public PathOfSearching()
         {
+            //TODO: make CollectList at start
+            var lines = File.ReadAllLines(System.Environment.CurrentDirectory + "\\temp_modparser.txt");
+            foreach (var line in lines)
+            {
+
+            }
+
             InitializeComponent();
         }
 
@@ -150,7 +157,7 @@ namespace PathOfSearching
                 {
                     using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
                     {
-                        sw.WriteLine(line.ToLower());
+                        sw.WriteLine(line);
                     }
                 }
                 catch (Exception _exception)
